@@ -1,7 +1,7 @@
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset");
 let body = document.querySelector("body");
-let winner = document.querySelector("#winner");
+let winner = document.querySelector("h3");
 let msg = document.querySelector("msg");
 let turnO = true; //payerX,playerO
 let congrats = document.querySelector("#congrats");
@@ -42,7 +42,7 @@ const checkWinner = () =>{
      if(pos1Val != "" && pos2Val != "" && pos3Val != ""){
         if(pos1Val === pos2Val && pos2Val === pos3Val){
             body.style.backgroundColor = "#f0d9da";
-            winner.innerHTML = `<h4> WINNER = PLAYER ${ pos1Val } `
+            winner.append(  pos1Val );
             congrats.innerHTML= `<h2>Congratulation ! Player ${pos1Val} , you won!</h2>`;
         }
      }
