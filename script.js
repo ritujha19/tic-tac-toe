@@ -5,6 +5,7 @@ let winner = document.querySelector("#winner");
 let msg = document.querySelector("msg");
 let turnO = true; //payerX,playerO
 let congrats = document.querySelector("#congrats");
+let gameActive = true;
 
 const winPattern = [
     [0,1,2],
@@ -18,6 +19,8 @@ const winPattern = [
 ];
 boxes.forEach((box) =>{
     box.addEventListener("click", ()=>{
+        if(!gameActive) return;
+
         if(turnO){
             box.innerText = "O";
             turnO = false;
@@ -45,6 +48,7 @@ const checkWinner = () =>{
             winner.append(  pos1Val );
             winner.innerText = `WINNER = Player ${pos1Val}`;
             congrats.innerHTML= `<h2>Congratulation ! Player ${pos1Val} , you won!</h2>`;
+            gameActive = false;
         }
      }
     }
