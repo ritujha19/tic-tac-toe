@@ -6,9 +6,9 @@ body{
     background-color: rgb(56, 148, 118);
     text-align: center;
 }
+
 .heading{
     margin-top: 10px;
-    padding-top: 10px;
 }
 .msg{
     width: 50rem;
@@ -34,7 +34,7 @@ main{
     height: 80vh;
 }
 .container{
-    height: 70vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,4 +79,18 @@ h3{
    padding: 10px;
     margin-bottom: 5px;
   
+}
+@media screen and (min-width: 600px) {
+    [class*="main"]{
+        height: 100%;
+        width: 100%;
+    }
+      
+}
+@media screen and (min-width: 375px) {
+    [class*="main"]{
+        height: 100%;
+        width: 100%;
+    }
+   
 }
